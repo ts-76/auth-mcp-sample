@@ -1,0 +1,44 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "auth-mcp-min",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-09-15",
+	"r2_buckets": [
+		{
+			"binding": "MCP_RESOURCE_BUCKET",
+			"bucket_name": "mcp-resource-bucket"
+		}
+	],
+	"migrations": [
+		{
+			"new_sqlite_classes": [
+				"MyMCP"
+			],
+			"tag": "v1"
+		}
+	],
+	"compatibility_flags": [
+		"nodejs_compat"
+	],
+	"durable_objects": {
+		"bindings": [
+			{
+				"class_name": "MyMCP",
+				"name": "MCP_OBJECT"
+			}
+		]
+	},
+	"kv_namespaces": [
+		{
+			"binding": "OAUTH_KV",
+			"id": "77115e6ec3714df18218bfc99df6936b"
+		}
+	],
+	"observability": {
+		"enabled": true
+	},
+	"dev": {
+		"port": 8787,
+		"local_protocol": "http",
+	}
+}
