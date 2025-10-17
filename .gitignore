@@ -31,3 +31,9 @@ lerna-debug.log*
 
 # misc
 .DS_Store
+
+# lockfiles
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+bun.lock

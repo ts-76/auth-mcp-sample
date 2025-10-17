@@ -1,7 +1,6 @@
 import OAuthProvider from '@cloudflare/workers-oauth-provider';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { McpAgent } from 'agents/mcp';
-import { registerMarkdownResources } from './mcp/resources';
 import { registerTools } from './mcp/tools';
 import { handleAccessRequest } from './auth/access-handler';
 import type { Props } from './auth/workers-oauth-utils';
@@ -17,7 +16,6 @@ export class MyMCP extends McpAgent<Env, Record<string, never>, Props> {
 
     async init() {
         registerTools(this.server, this.env);
-        registerMarkdownResources(this.server, this.env);
     }
 }
 
