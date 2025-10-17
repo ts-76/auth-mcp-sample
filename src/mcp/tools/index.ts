@@ -1,5 +1,6 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
-import { registerListObjectsTool } from './list_objects.js';
+import { registerListAllObjectsTool } from './list_objects';
+
 export function registerTools(mcpServer: McpServer, env: Env) {
-    registerListObjectsTool(mcpServer, env);
+    registerListAllObjectsTool(mcpServer, env);
 }
